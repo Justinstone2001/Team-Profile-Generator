@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Justinstone2001/profile/issues"
   },
-  "homepage": "https://github.com/Justinstone2001/profile#readme"
+  "homepage": "https://github.com/Justinstone2001/profile#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.0.0"
+  }
 }
