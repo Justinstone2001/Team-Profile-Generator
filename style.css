@@ -1,0 +1,11 @@
+
+body {background-color:rgb(161, 155, 155)}
+
+#title{
+    font-size: 25px;
+    border: solid;
+    border-width: 5px;
+    width: 120px;
+    padding: 4px;
+    background-color: rgb(176, 176, 248);
+}

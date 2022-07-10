@@ -10,10 +10,9 @@ const templateHTML = (data) => {
         <title>Team Members</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
-        <script src="https://kit.fontawesome.com/5305f2a041.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../style.css">
     </head>
-    <div class="m-1 page-header">
+    <div id="title" class="m-4 page-header">
         My Team
     </div>
     <body>

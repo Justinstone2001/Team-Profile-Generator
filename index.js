@@ -41,7 +41,7 @@ function runner() {
       .then((input) => {
         const manager2 = new Manager(
           input.managerName,
-          input.manaerId,
+          input.managerId,
           input.managerEmail,
           input.managerOffice
         );
@@ -145,10 +145,10 @@ function runner() {
       ])
       .then((input) => {
         const intern2 = new Intern(
-          input.name3,
-          input.id3,
-          input.email3,
-          input.school3
+          input.internName,
+          input.internId,
+          input.internEmail,
+          input.internUniversity
         );
         teamArr.push(intern2);
         makeTeam();
