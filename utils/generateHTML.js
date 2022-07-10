@@ -1,71 +1,142 @@
-const template = (data) => {
-    return `
+const templateHTML = (data) => {
+  return `
     <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Members</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="./output/style.css">
-</head>
-<h1 class ="m-1 page-header">
-    My Team
-</h1>
-<body>
-<div class="container">
-<div class="holder justify-content-center row">
-    ${data}
-</div>
-</div>
-</body>
-</html>
-`
-}
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Members</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/5305f2a041.js" crossorigin="anonymous"></script>
+    </head>
+    <div class="m-1 page-header">
+        My Team
+    </div>
+    <body>
+    <div class="container">
+    <div class="holder justify-content-center row">
+       ${data}
+    </div>
+    </div>
+    </body>
+    
+    </html>
+    `;
+};
 
 const manager = managerArray => {
     return `
-    <div class="manager">
-            <h2>
-                ${managerArray.getName()}
-            </h2>
-            <h2>
-                ${managerArray.getRole()}
-            </h2>
-            <p>
-                ID: ${managerArray.getId()}
-            </p>
-            <p>
-                Email: <a href="malito:${managerArray.getEmail()}">${managerArray.getEmail()}</a>
-            </p>
-            <p>
-                Office #: ${managerArray.getOfficeNumber()}
-            </p>
+    <div class="col-lg-4 col-md-7 col-sm-9">
+        <div class="card border-dark m-4 mx-6">
+            <div class="intro text-light mx-4 my-1">
+                <h2 class="mx-2">
+                    ${managerArray.getName()}
+                </h2>
+                <h2 class="mx-2">
+                <i class="fa-solid fa-mug-hot"></i>
+                    ${managerArray.getRole()}
+                </h2>
+            </div>
+            <div class="border-dark second-section">
+                <p class="m-2">
+                    ID: ${managerArray.getId()}
+                </p>
+                <p class="m-2">
+                    Email: <a href="mailto:${managerArray.getEmail()}">${managerArray.getEmail()}</a>
+                </p>
+                <p class="m-2">
+                    Office Number: ${managerArray.getOffice()}
+                </p>
+            </div>
+        </div>
     </div>
-    `
-}
+    `}
+const engineer = (engineerArray) => {
+  return `
+        <div class="col-lg-4 col-md-7 col-sm-9">
+            <div class="card border-dark m-4 mx-6">
+                <div class="intro text-light mx-4 my-1">
+                    <h2 class="mx-2">
+                        ${engineerArray.getName()}
+                    </h2>
+                    <h2 class="mx-2">
+                    <i class="fa-solid fa-glasses"></i>
+                        ${engineerArray.getRole()}
+                    </h2>
+                </div>
+                <div class="border-dark second-section">
+                    <p class="m-2">
+                        ID: ${engineerArray.getId()}
+                    </p>
+                    <p class="m-2">
+                        Email: <a href="mailto:${engineerArray.getEmail()}">${engineerArray.getEmail()}</a>
+                    </p>
+                    <p class="m-2">
+                        GitHub: <a href="https://github.com/${engineerArray.getGitHub()}">${engineerArray.getGitHub()}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+            `;
+};
+const intern = (internArray) => {
+  return `
+        <div class="col-lg-4 col-md-7 col-sm-9">
+            <div class="card border-dark m-4 mx-6">
+                <div class="intro text-light mx-4 my-1">
+                    <h2 class="mx-2">
+                        ${internArray.getName()}
+                    </h2>
+                    <h2 class="mx-2">
+                    <i class="fa-solid fa-user-graduate"></i>
+                        ${internArray.getRole()}
+                    </h2>
+                </div>
+                <div class="border-dark second-section">
+                    <p class="m-2">
+                        ID: ${internArray.getId()}
+                    </p>
+                    <p class="m-2">
+                        Email: <a href="mailto:${internArray.getEmail()}">${internArray.getEmail()}</a>
+                    </p>
+                    <p class="m-2">
+                        School: ${internArray.getUniversity()}
+                    </p>
+                </div>
+            </div>
+        </div>
+    `;
+};
 
-const engineer = engineerArray => {
-    return `
-    <div class="engineer">
-            <h2>
-                ${engineerArray.getName()}
-            </h2>
-            <h2>
-                ${managerArray.getRole()}
-            </h2>
-            <p>
-                ID: ${managerArray.getId()}
-            </p>
-            <p>
-                Email: <a href="malito:${managerArray.getEmail()}">${managerArray.getEmail()}</a>
-            </p>
-            <p>
-                Office #: ${managerArray.getOfficeNumber()}
-            </p>
-    </div>
-    `
-}
+const employeesVar = (employees) => {
+  let employeeArr = [];
+  for (i = 0; i < employees.length; i++) {
+    const workers = employees[i];
+    const position = workers.getRole();
+
+    if (position === "Manager") {
+      // employeesStr += manager(employees[i])
+      const managerDiv = manager(workers);
+      employeeArr.push(managerDiv);
+    }
+    if (position === "Engineer") {
+      // employeesStr += engineer(employees[i])
+      const engineerDiv = engineer(workers);
+      employeeArr.push(engineerDiv);
+    }
+    if (position === "Intern") {
+      // employeesStr += intern(employees[i])
+      const internDiv = intern(workers);
+      employeeArr.push(internDiv);
+    }
+  }
+  const team = employeeArr;
+  return templateHTML(team);
+};
+
+// writeToFile(templateHTML(data));
+module.exports = employeesVar;
