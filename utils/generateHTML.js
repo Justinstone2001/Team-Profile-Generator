@@ -11,6 +11,7 @@ const templateHTML = (data) => {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <link rel="stylesheet" href="../style.css">
+        <script src="https://kit.fontawesome.com/5305f2a041.js" crossorigin="anonymous"></script>
     </head>
     <div id="title" class="m-4 page-header">
         My Team
@@ -31,12 +32,12 @@ const manager = (managerArray) => {
   return `
     <div class="col-lg-4 col-md-7 col-sm-9">
         <div class="card border-dark m-4 mx-6">
-            <div class="intro text-light mx-4 my-1">
+            <div class="intro text-dark mx-4 my-1">
                 <h2 class="mx-2">
                     ${managerArray.getName()}
                 </h2>
-                <h2 class="mx-2 text-dark">
-                <i class="fa-solid fa-mug-hot text-dark"></i>
+                <h2 class="mx-2">
+                <i class="fa-solid fa-mug-hot"></i>
                     ${managerArray.getRole()}
                 </h2>
             </div>
@@ -59,7 +60,7 @@ const engineer = (engineerArray) => {
   return `
         <div class="col-lg-4 col-md-7 col-sm-9">
             <div class="card border-dark m-4 mx-6">
-                <div class="intro text-light mx-4 my-1">
+                <div class="intro text-dark mx-4 my-1">
                     <h2 class="mx-2">
                         ${engineerArray.getName()}
                     </h2>
@@ -87,7 +88,7 @@ const intern = (internArray) => {
   return `
         <div class="col-lg-4 col-md-7 col-sm-9">
             <div class="card border-dark m-4 mx-6">
-                <div class="intro text-light mx-4 my-1">
+                <div class="intro text-dark mx-4 my-1">
                     <h2 class="mx-2">
                         ${internArray.getName()}
                     </h2>
