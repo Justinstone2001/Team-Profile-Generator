@@ -25,3 +25,47 @@ const template = (data) => {
 </html>
 `
 }
+
+const manager = managerArray => {
+    return `
+    <div class="manager">
+            <h2>
+                ${managerArray.getName()}
+            </h2>
+            <h2>
+                ${managerArray.getRole()}
+            </h2>
+            <p>
+                ID: ${managerArray.getId()}
+            </p>
+            <p>
+                Email: <a href="malito:${managerArray.getEmail()}">${managerArray.getEmail()}</a>
+            </p>
+            <p>
+                Office #: ${managerArray.getOfficeNumber()}
+            </p>
+    </div>
+    `
+}
+
+const engineer = engineerArray => {
+    return `
+    <div class="engineer">
+            <h2>
+                ${engineerArray.getName()}
+            </h2>
+            <h2>
+                ${managerArray.getRole()}
+            </h2>
+            <p>
+                ID: ${managerArray.getId()}
+            </p>
+            <p>
+                Email: <a href="malito:${managerArray.getEmail()}">${managerArray.getEmail()}</a>
+            </p>
+            <p>
+                Office #: ${managerArray.getOfficeNumber()}
+            </p>
+    </div>
+    `
+}
