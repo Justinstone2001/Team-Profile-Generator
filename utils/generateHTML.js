@@ -28,16 +28,16 @@ const templateHTML = (data) => {
     `;
 };
 
-const manager = managerArray => {
-    return `
+const manager = (managerArray) => {
+  return `
     <div class="col-lg-4 col-md-7 col-sm-9">
         <div class="card border-dark m-4 mx-6">
             <div class="intro text-light mx-4 my-1">
                 <h2 class="mx-2">
                     ${managerArray.getName()}
                 </h2>
-                <h2 class="mx-2">
-                <i class="fa-solid fa-mug-hot"></i>
+                <h2 class="mx-2 text-dark">
+                <i class="fa-solid fa-mug-hot text-dark"></i>
                     ${managerArray.getRole()}
                 </h2>
             </div>
@@ -54,7 +54,8 @@ const manager = managerArray => {
             </div>
         </div>
     </div>
-    `}
+    `;
+};
 const engineer = (engineerArray) => {
   return `
         <div class="col-lg-4 col-md-7 col-sm-9">
@@ -63,8 +64,8 @@ const engineer = (engineerArray) => {
                     <h2 class="mx-2">
                         ${engineerArray.getName()}
                     </h2>
-                    <h2 class="mx-2">
-                    <i class="fa-solid fa-glasses"></i>
+                    <h2 class="mx-2 text-dark">
+                    <i class="fa-solid fa-glasses text-dark"></i>
                         ${engineerArray.getRole()}
                     </h2>
                 </div>
@@ -91,8 +92,8 @@ const intern = (internArray) => {
                     <h2 class="mx-2">
                         ${internArray.getName()}
                     </h2>
-                    <h2 class="mx-2">
-                    <i class="fa-solid fa-user-graduate"></i>
+                    <h2 class="mx-2 text-dark">
+                    <i class="fa-solid fa-user-graduate text-dark"></i>
                         ${internArray.getRole()}
                     </h2>
                 </div>
@@ -119,17 +120,14 @@ const employeesVar = (employees) => {
     const position = workers.getRole();
 
     if (position === "Manager") {
-      // employeesStr += manager(employees[i])
       const managerDiv = manager(workers);
       employeeArr.push(managerDiv);
     }
     if (position === "Engineer") {
-      // employeesStr += engineer(employees[i])
       const engineerDiv = engineer(workers);
       employeeArr.push(engineerDiv);
     }
     if (position === "Intern") {
-      // employeesStr += intern(employees[i])
       const internDiv = intern(workers);
       employeeArr.push(internDiv);
     }
@@ -138,5 +136,4 @@ const employeesVar = (employees) => {
   return templateHTML(team);
 };
 
-// writeToFile(templateHTML(data));
 module.exports = employeesVar;
