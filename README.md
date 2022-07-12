@@ -19,4 +19,3 @@ This program lets the user input the name of their manager, intern and engineer 
 
 [Repository](https://github.com/Justinstone2001/profile)
 
-[Live Site](https://justinstone2001.github.io/profile/)
